@@ -1,0 +1,57 @@
+{
+  "mcpServers": {
+    "james-prescott-joule-ai": {
+      "command": "cargo",
+      "args": [
+        "run",
+        "--release",
+        "--quiet"
+      ],
+      "env": {
+        "RUST_LOG": "info",
+        "TITAN_PROTOCOL": "JOULE",
+        "TARGET_CHAIN": "Solana",
+        "FIPS_203_LEVEL": "ML-KEM-768",
+        "FIPS_204_LEVEL": "ML-DSA-65"
+      },
+      "tools": [
+        {
+          "name": "verify_james_prescott_joule_discovery",
+          "description": "Verifies core invariant principles: Mechanical equivalent of heat, first law of thermodynamics (energy conservation), Joule's law",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "input_data": {
+                "type": "string"
+              },
+              "precision_level": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "input_data"
+            ]
+          }
+        },
+        {
+          "name": "model_james_prescott_joule_telemetry",
+          "description": "Models high-assurance domain telemetry for Physics & Thermodynamics",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "telemetry_vector": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              }
+            },
+            "required": [
+              "telemetry_vector"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
